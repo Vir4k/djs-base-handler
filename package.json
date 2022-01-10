@@ -1,11 +1,11 @@
 {
-    "name": "djs",
+    "name": "yunxi",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "Yunxi.js",
     "scripts": {
-        "start": "node index.js",
-        "test": "nodemon index.js"
+        "start": "node Yunxi.js",
+        "test": "nodemon Yunxi.js"
     },
     "keywords": [],
     "author": "",

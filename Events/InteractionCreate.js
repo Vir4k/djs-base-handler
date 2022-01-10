@@ -1,11 +1,10 @@
-const client = require("../index");
+const client = require("../Yunxi");
 
 client.on("interactionCreate", async (interaction) => {
-    // Slash Command Handling
     if (interaction.isCommand()) {
         await interaction.deferReply({ ephemeral: false }).catch(() => {});
 
-        const cmd = client.slashCommands.get(interaction.commandName);
+        const cmd = client.SlashCommands.get(interaction.commandName);
         if (!cmd)
             return interaction.followUp({ content: "An error has occured " });
 
@@ -21,7 +20,7 @@ client.on("interactionCreate", async (interaction) => {
         }
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 
-        cmd.run(client, interaction, args);
+        cmd.run({client, interaction, args});
     }
 
     // Context Menu Handling
